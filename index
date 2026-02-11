@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Data Engineer | Portfolio</title>
+    
+    <!-- n8n Chatbot Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/style.css" rel="stylesheet" />
+    
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0a0c;
+            --accent-neon: #00f2ff; 
+            --accent-purple: #7000ff;
+            --text-main: #e0e0e0;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(0, 242, 255, 0.2);
+            /* n8n Chatbot Overrides to match theme */
+            --n8n-chat-primary-color: #00f2ff;
+            --n8n-chat-button-background: #00f2ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Space+Grotesk', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- AI Background Grid --- */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--border-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.3;
+            perspective: 1000px;
+            transform: rotateX(45deg);
+            transform-origin: top;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            from { background-position: 0 0; }
+            to { background-position: 0 100%; }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 10%;
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--accent-neon);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent-neon); }
+
+        section {
+            padding: 100px 10% 60px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 { font-size: 4rem; margin-bottom: 1rem; }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent-neon), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-neon);
+        }
+
+        .tech-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--accent-neon);
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .social-links a { color: var(--text-main); font-size: 2rem; margin-right: 1.5rem; }
+
+        /* Style customization for n8n chat button to match the theme */
+        #n8n-chat-container .n8n-chat-launcher {
+            box-shadow: 0 0 15px var(--accent-neon);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <nav>
+        <div class="logo">DE // AI_SYSTEM</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Pipelines</a>
+            <a href="#skills">Tech Stack</a>
+            <a href="#contact">Connect</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <p class="logo" style="margin-bottom: 1rem; font-size: 0.8rem;">[SYSTEM STATUS: ONLINE]</p>
+        <h1>I'm <span class="gradient-text">Alex Data</span></h1>
+        <h2 style="font-size: 2rem; margin-bottom: 1rem; font-family: 'JetBrains Mono';">
+            > Building <span id="typing-text"></span><span style="animation: blink 1s infinite;">|</span>
+        </h2>
+        <p style="max-width: 600px;">AI Data Engineering Student specializing in designing high-throughput data architectures and automating ML lifecycles.</p>
+        <div style="margin-top: 2rem;">
+            <a href="#projects" style="background: var(--accent-neon); color: black; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-right: 1rem;">View Projects</a>
+            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">&darr; Or ask my AI Assistant in the bottom right</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Data Engineering Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Scalable Vector DB Pipeline</h3>
+                <p>Automated ingestion of unstructured data into Pinecone for RAG applications.</p>
+                <div style="margin-top: 1rem;">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pinecone</span>
+                    <span class="tech-tag">Airflow</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>ML Training Orchestration</h3>
+                <p>Built a CI/CD pipeline that triggers model retraining on data drift detection.</p>
+                <div style="margin-top: 1rem;">
+                    <span class="tech-tag">MLFlow</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">GitHub Actions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Get in Touch</h2>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+        <footer style="margin-top: 5rem; opacity: 0.5; font-size: 0.8rem; font-family: 'JetBrains Mono';">
+            &copy; 2024 ALEX_DATA_ENGINEER // PORTFOLIO_V1
+        </footer>
+    </section>
+
+    <!-- Project Logic (Typing Effect) -->
+    <script>
+        const textArray = ["Scalable Data Ecosystems", "Auto-ML Pipelines", "Real-time ETL"];
+        let textIndex = 0;
+        let charIndex = 0;
+        const target = document.getElementById("typing-text");
+
+        function type() {
+            if (charIndex < textArray[textIndex].length) {
+                target.innerHTML += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 2000);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                target.innerHTML = textArray[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 50);
+            } else {
+                textIndex = (textIndex + 1) % textArray.length;
+                setTimeout(type, 500);
+            }
+        }
+        window.onload = type;
+    </script>
+
+    <!-- n8n Chatbot Integration -->
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://n8n1.m1nz.org/webhook/b51161bb-fc25-489c-a7d1-1e017c14980d/chat',
+            mode: 'window',
+            chatInputPlaceholder: 'Ask me about my experience...',
+            title: 'AI Portfolio Assistant',
+            subtitle: 'Powered by n8n & LLMs'
+        });
+    </script>
+
+</body>
+</html>
