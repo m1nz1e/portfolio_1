@@ -246,12 +246,17 @@
     <script type="module">
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/chat.bundle.es.js';
 
+initialMessages: [
+    'Hello! 👋',
+    'I am your Student Data Bot for UCL. You can ask me questions like give me student numbers for 2024?'
+  ],
+
         createChat({
             webhookUrl: 'https://n8n1.m1nz.org/webhook/b51161bb-fc25-489c-a7d1-1e017c14980d/chat',
             mode: 'window',
-            chatInputPlaceholder: 'Ask me about my experience...',
-            title: 'AI Portfolio Assistant',
-            subtitle: 'Powered by n8n & LLMs'
+            chatInputPlaceholder: 'Ask me questions about UCL student data...',
+            title: 'Student data chat bot',
+            subtitle: 'Powered by m1nz'
         });
     </script>
 
